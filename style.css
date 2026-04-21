@@ -1,0 +1,13 @@
+h2 {
+  color: #ff0000;
+  font-size: 20px;
+}
+p{
+    color:rgb(71, 71, 58);
+    font-size: 16px;
+    line-height:1.5;
+}
+
+body{
+    background-color: rgb(243, 231, 217);
+}
