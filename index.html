@@ -12,6 +12,9 @@
     <h2>趣味</h2> <!--中見出し-->
     <p >漫画 パソコン</p>
 
+    <h2>今日の運勢</h2>
+<p id="fortune">ここに結果が出ます</p>
+
     <h2>気分スコア診断</h2>
 <p>今日の気分を 0〜10 の数値で mood 変数に書いて更新してください</p>
 <p id="result">ここに診断結果が出ます</p>
@@ -22,6 +25,8 @@ const fortunes = ["大吉", "中吉", "小吉", "末吉", "凶"];
 const index = Math.floor(Math.random() * fortunes.length);
 
 const mood = 7;  // 0〜10 で気分を表す数値
+const result   = fortunes[index];
+console.log(result);
 
 // 気分スコア診断
 let message;
