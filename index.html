@@ -12,5 +12,33 @@
     <h2>趣味</h2> <!--中見出し-->
     <p >漫画 パソコン</p>
 
+    <h2>気分スコア診断</h2>
+<p>今日の気分を 0〜10 の数値で mood 変数に書いて更新してください</p>
+<p id="result">ここに診断結果が出ます</p>
+    <script>
+        // おみくじの候補リスト（順番に意味はない）
+const fortunes = ["大吉", "中吉", "小吉", "末吉", "凶"];
+// 0以上 配列長未満 の整数をランダムに作る
+const index = Math.floor(Math.random() * fortunes.length);
+
+const mood = 7;  // 0〜10 で気分を表す数値
+
+// 気分スコア診断
+let message;
+
+if (mood >= 9) {
+  message = "絶好調！その勢いを大切に";
+} else if (mood >= 6) {
+  message = "いい感じ。今日もがんばろう";
+} else if (mood >= 3) {
+  message = "ぼちぼち。無理せずいこう";
+} else {
+  message = "お疲れさま。今日はゆっくり休もう";
+}
+
+console.log(message);
+document.getElementById("result").textContent = message;
+
+    </script>
 </body>
 </html>
