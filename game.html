@@ -25,6 +25,17 @@ if (dice >= 5) {
   advice = "深呼吸を3回してから次の作業へ";
 }
 
+// サイコロを 1 回振る（第8回・第9回で書いた）
+const dice1 = Math.floor(Math.random() * 6) + 1;
+console.log("1 回目:", dice1);
+
+// もう 1 回振りたい
+const dice2 = Math.floor(Math.random() * 6) + 1;
+console.log("2 回目:", dice2);
+
+// さらにもう 1 回（合計 3 回）
+const dice3 = Math.floor(Math.random() * 6) + 1;
+console.log("3 回目:", dice3);
 // 結果を画面に表示
 const message = ` ${dice} が出ました！→ ${advice}`;
 document.getElementById("game-result").textContent = message;
