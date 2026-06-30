@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>お気に入りリスト</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>私のお気に入り</h1>
+  <p>配列に入れたものを <code>for</code> 文で全部表示します</p>
+  <ul id="favorite-list"></ul>
+  <p><a href="index.html">トップに戻る</a></p>
+
+  <script>
+    // ここに配列と for 文を書く（次の手順で）
+    const favorites = [
+  "好きな食べ物：寿司",
+  "好きな色：赤",
+  "好きな本：漫画",
+  "好きな場所：図書館"
+];
+
+const ul = document.getElementById("favorite-list");
+
+for (let i = 0; i < favorites.length; i++) {
+  const li = document.createElement("li");
+  li.textContent = favorites[i];
+  ul.appendChild(li);
+}
+  </script>
+</body>
+</html>
