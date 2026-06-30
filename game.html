@@ -48,6 +48,12 @@ function rollDice(){
 console.log("1 回目:", rollDice());
 console.log("2 回目:", rollDice());
 console.log("3 回目:", rollDice());
+
+const results=[];
+for(let i=0; i<3; i++){
+  results.push(rollDice());
+}
+console.log("結果:", results);
     </script>
 </body>
 </html>
