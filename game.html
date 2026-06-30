@@ -40,6 +40,14 @@ console.log("3 回目:", dice3);
 const message = ` ${dice} が出ました！→ ${advice}`;
 document.getElementById("game-result").textContent = message;
 console.log(message);
+
+function rollDice(){
+    return Math.floor(Math.random() * 6) + 1;
+}
+
+console.log("1 回目:", rollDice());
+console.log("2 回目:", rollDice());
+console.log("3 回目:", rollDice());
     </script>
 </body>
 </html>
