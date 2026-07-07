@@ -1,0 +1,31 @@
+<!DOCTYPE html>  <!--HTMLの宣言-->
+<html lang="ja"> <!--日本語-->
+<head>
+    <meta charset="UTF-8"> <!--文字エンコーディング-->
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>お気に入りリスト</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<script>
+    function handleClick() {
+  document.getElementById("message").textContent = "押されました！";
+}
+
+const button = document.getElementById("my-button");
+button.addEventListener("click", handleClick);
+
+let count = 0;
+
+function handleClick() {
+  count = count + 1;
+  document.getElementById("message").textContent = "押した回数: " + count + " 回";
+}
+
+const button = document.getElementById("my-button");
+button.addEventListener("click", handleClick);
+</script>
+<body>
+<h1 id="message">まだ何もしていません</h1>
+<button id="my-button">押してみる</button>
+</body>
+</html>
