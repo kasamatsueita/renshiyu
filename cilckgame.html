@@ -40,6 +40,28 @@
 
     const rollButton = document.getElementById("my-button");
     rollButton.addEventListener("click", handleRoll);
+
+    let tries = 0;
+let score = 0;
+// サイコロを振る関数
+function rollDice() {
+  return Math.floor(Math.random() * 6) + 1;
+}
+
+function handleRoll() {
+  const result = rollDice();
+  tries = tries + 1;
+
+  if (result === 6) {
+    score = score + 1;
+  }
+
+  document.getElementById("message").textContent =
+    "出た目: " + result + "（" + tries + "回目、得点: " + score + "）";
+}
+
+const rollButton = document.getElementById("my-button");
+rollButton.addEventListener("click", handleRoll);
   </script>
 </body>
 
