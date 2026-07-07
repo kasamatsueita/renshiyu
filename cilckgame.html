@@ -11,6 +11,7 @@
 <body>
   <h1 id="message">まだ何もしていません</h1>
   <button id="my-button">クリックしてね</button>
+  <button id="my-button">サイコロを振る</button>
   <br>
   <a href="index.html">トップに戻る</a>
   <script>
@@ -28,6 +29,17 @@
       document.getElementById("message").textContent = "押した回数: " + count + " 回";
     }
 
+    function rollDice() {
+      return Math.floor(Math.random() * 6) + 1;
+    }
+
+    function handleRoll() {
+      const result = rollDice();
+      document.getElementById("message").textContent = "出た目: " + result;
+    }
+
+    const rollButton = document.getElementById("my-button");
+    rollButton.addEventListener("click", handleRoll);
   </script>
 </body>
 
