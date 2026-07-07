@@ -11,7 +11,6 @@
 <body>
   <h1 id="message">まだ何もしていません</h1>
   <button id="my-button">クリックしてね</button>
-  <button id="my-button">サイコロを振る</button>
   <br>
   <a href="index.html">トップに戻る</a>
   <script>
@@ -29,39 +28,7 @@
       document.getElementById("message").textContent = "押した回数: " + count + " 回";
     }
 
-    function rollDice() {
-      return Math.floor(Math.random() * 6) + 1;
-    }
-
-    function handleRoll() {
-      const result = rollDice();
-      document.getElementById("message").textContent = "出た目: " + result;
-    }
-
-    const rollButton = document.getElementById("my-button");
-    rollButton.addEventListener("click", handleRoll);
-
-    let tries = 0;
-let score = 0;
-// サイコロを振る関数
-function rollDice() {
-  return Math.floor(Math.random() * 6) + 1;
-}
-
-function handleRoll() {
-  const result = rollDice();
-  tries = tries + 1;
-
-  if (result === 6) {
-    score = score + 1;
-  }
-
-  document.getElementById("message").textContent =
-    "出た目: " + result + "（" + tries + "回目、得点: " + score + "）";
-}
-
-const rollButton = document.getElementById("my-button");
-rollButton.addEventListener("click", handleRoll);
+    
   </script>
 </body>
 
