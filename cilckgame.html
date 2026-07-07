@@ -1,29 +1,33 @@
-<!DOCTYPE html>  <!--HTMLの宣言-->
-<html lang="ja"> <!--日本語-->
+<!DOCTYPE html>
+<html lang="ja">
+
 <head>
-    <meta charset="UTF-8"> <!--文字エンコーディング-->
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>お気に入りリスト</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>クリックゲーム</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<script>
-    function handleClick() {
-  document.getElementById("message").textContent = "押されました！";
-}
 
-const button = document.getElementById("my-button");
-button.addEventListener("click", handleClick);
-
-let count = 0;
-
-function handleClick() {
-  count = count + 1;
-  document.getElementById("message").textContent = "押した回数: " + count + " 回";
-}
-
-</script>
 <body>
-<h1 id="message">まだ何もしていません</h1>
-<button id="my-button">押してみる</button>
+  <h1 id="message">まだ何もしていません</h1>
+  <button id="my-button">クリックしてね</button>
+  <a href="index.html">トップに戻る</a>
+  <script>
+    function handleClick() {
+      document.getElementById("message").textContent = "押されました！";
+    }
+
+    const button = document.getElementById("my-button");
+    button.addEventListener("click", handleClick);
+
+    let count = 0;
+
+    function handleClick() {
+      count = count + 1;
+      document.getElementById("message").textContent = "押した回数: " + count + " 回";
+    }
+
+  </script>
 </body>
+
 </html>
