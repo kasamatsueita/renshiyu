@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お気に入りリスト</title>
+    <link rel="stylesheet" href="style.css">
+        <script>
+        const me = {
+            name: "笠松瑛太",
+            favoriteColor: "赤",
+            hobby: "読書"
+        };
+
+        console.log(me.name);          // "笠松瑛太"
+        console.log(me.favoriteColor); // "赤"
+        console.log(me.hobby);         // "読書"
+
+        const favorites = [
+  { category: "好きな食べ物", value: "カレー" },
+  { category: "好きな色",     value: "赤" },
+  { category: "好きな音楽",   value: "J-POP" },
+  { category: "好きな場所",   value: "図書館" }
+];
+const ul = document.getElementById("favorite-list");
+for (let i = 0; i < favorites.length; i++) {
+  const li = document.createElement("li");
+  li.textContent = `${favorites[i].category}：${favorites[i].value}`;
+  ul.appendChild(li);
+}
+    </script>
+</head>
+<body>
+    <h1>お気に入り</h1>
+    <p>配列に入れたものを表示しています。</p>
+    <ul id="favorite-list"></ul>
+    <p><a href="index.html">戻る</a></p>
+</body>
+
+</html>
