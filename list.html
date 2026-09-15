@@ -30,8 +30,8 @@
 //}
 
  const favorites = [
-      { category: "好きな食べ物", value: "カレー", reason: "辛いものが好きだから" },
-      { category: "好きな色",     value: "青",     reason: "空の色だから" },
+      { category: "好きな食べ物", value: "寿司", reason: "魚が好きだから" },
+      { category: "好きな色",     value: "赤",     reason: "かっこいい色だから" },
       { category: "好きな音楽",   value: "J-POP",  reason: "歌詞が心に残るから" },
       { category: "好きな場所",   value: "図書館", reason: "静かで集中できるから" }
     ];
@@ -43,7 +43,6 @@
       li.textContent = `${favorites[i].category}：${favorites[i].value}（${favorites[i].reason}）`;
       ul.appendChild(li);
     }
-  </script>
   </script>
 </body>
 </html>
