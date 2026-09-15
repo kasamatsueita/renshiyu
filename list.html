@@ -43,6 +43,24 @@
       li.textContent = `${favorites[i].category}：${favorites[i].value}（${favorites[i].reason}）`;
       ul.appendChild(li);
     }
+
+    document.getElementById("add-btn").addEventListener("click", () => {
+  const category = document.getElementById("input-category").value;
+  const value = document.getElementById("input-value").value;
+  const reason = document.getElementById("input-reason").value;
+
+  if (category === "" || value === "") {
+    alert("カテゴリと内容は入力してください");
+    return;
+  }
+
+  favorites.push({ category, value, reason });
+  render();
+
+  document.getElementById("input-category").value = "";
+  document.getElementById("input-value").value = "";
+  document.getElementById("input-reason").value = "";
+});
   </script>
 </body>
 </html>
