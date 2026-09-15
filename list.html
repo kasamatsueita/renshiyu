@@ -11,7 +11,11 @@
   <p>配列に入れたものを <code>for</code> 文で全部表示します</p>
   <ul id="favorite-list"></ul>
   <p><a href="index.html">トップに戻る</a></p>
-
+  <input type="text" id="input-category" placeholder="カテゴリ（例：好きな食べ物）">
+  <input type="text" id="input-value" placeholder="内容（例：カレー）">
+  <input type="text" id="input-reason" placeholder="理由（例：辛いから）">
+  <button id="add-btn">追加する</button>
+</div>
   <script>
     // ここに配列と for 文を書く（次の手順で）
     //const favorites = [
@@ -36,15 +40,18 @@
       { category: "好きな場所",   value: "図書館", reason: "静かで集中できるから" }
     ];
 
-    const ul = document.getElementById("favorite-list");
+const ul = document.getElementById("favorite-list");
 
-    for (let i = 0; i < favorites.length; i++) {
-      const li = document.createElement("li");
-      li.textContent = `${favorites[i].category}：${favorites[i].value}（${favorites[i].reason}）`;
-      ul.appendChild(li);
-    }
-
-    document.getElementById("add-btn").addEventListener("click", () => {
+function render() {
+  ul.innerHTML = "";
+  for (let i = 0; i < favorites.length; i++) {
+    const li = document.createElement("li");
+    li.textContent = `${favorites[i].category}：${favorites[i].value}（${favorites[i].reason}）`;
+    ul.appendChild(li);
+  }
+}
+render();
+document.getElementById("add-btn").addEventListener("click", () => {
   const category = document.getElementById("input-category").value;
   const value = document.getElementById("input-value").value;
   const reason = document.getElementById("input-reason").value;
