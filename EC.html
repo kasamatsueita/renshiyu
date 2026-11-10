@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>後期作品（ECサイト）</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 16px;
+    }
+
+    .bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 16px;
+      background: #3d5a73;
+      color: white;
+    }
+
+    .search {
+      margin: 16px 0;
+    }
+
+    .search input {
+      width: 100%;
+      padding: 8px;
+      font-size: 1rem;
+      box-sizing: border-box;
+    }
+
+    .shop {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 12px;
+    }
+
+    .item {
+      padding: 12px;
+      background: #e8f0fe;
+      border: 2px solid #3d5a73;
+      border-radius: 8px;
+    }
+
+    .item .row {
+      display: flex;
+      justify-content: space-between;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="bar">
+    <span>ミニ雑貨店</span>
+    <span>カート: 0点</span>
+  </div>
+  <div class="search">
+    <input type="text" placeholder="商品を探す">
+  </div>
+  <div class="shop" id="shop"></div>
+
+  <script>
+    const products = [
+      { name: "マグ", price: 800 },
+      { name: "ノート", price: 300 },
+      { name: "ペン", price: 150 },
+      { name: "ふせん", price: 200 },
+      { name: "ハサミ", price: 500 }
+    ];
+
+    const shop = document.getElementById("shop");
+
+for (let i = 0; i < products.length; i++) {
+  const item = document.createElement("div");
+  item.className = "item";
+
+  const row = document.createElement("div");
+  row.className = "row";
+
+  const name = document.createElement("span");
+  name.textContent = products[i].name;
+
+  const price = document.createElement("span");
+  price.textContent = `${products[i].price}円`;
+
+  row.appendChild(name);
+  row.appendChild(price);
+  item.appendChild(row);
+  shop.appendChild(item);
+}
+  </script>
+</body>
+</html>

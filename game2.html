@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>後期作品（ゲーム）</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 16px;
+        }
+
+        .bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 16px;
+            background: #3d5a73;
+            color: white;
+        }
+
+        .holes {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin: 16px 0;
+        }
+
+        .hole {
+            aspect-ratio: 1 / 1;
+            border-radius: 50%;
+            background: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+        }
+
+        .start {
+            display: block;
+            margin: 0 auto;
+            padding: 12px 24px;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bar">
+        <span>もぐらたたき</span>
+        <span>スコア: 0</span>
+    </div>
+    <div class="holes" id="board"></div>
+    <button class="start">はじめる</button>
+
+    <script>
+        const characters = [
+            { name: "もぐら", icon: "🐹", position: 1 },
+            { name: "うさぎ", icon: "🐰", position: 4 }
+        ];
+        const board = document.getElementById("board");
+
+for (let i = 0; i < 6; i++) {
+  const cell = document.createElement("div");
+  cell.className = "hole";
+
+  for (let j = 0; j < characters.length; j++) {
+    if (characters[j].position === i) {
+      cell.textContent = characters[j].icon;
+      cell.title = characters[j].name;
+    }
+  }
+
+  board.appendChild(cell);
+}
+
+    </script>
+</body>
+
+</html>
